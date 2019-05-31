@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #c1c1c1;
+            }
+            .header {
+                text-align: center;
+                font-size: 300;
+                color: #f2f2f2;
+            }
+
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .topnav a{
+                float: right;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .topnav a:hover{
+                background-color: #515151;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <div class="header">
+                <h1>Alpha-Blog</h1>
+            </div>
+            <hr>
+            <%= link_to "Back home", root_path%>
+        </div>
+        <h1 style="text-align:center;">Credits</h1>
+        <p style="text-align:center;">One guy who made this. Dozens call him Zawor but the real name is unknow...</p>
+    </body>
+</html>
