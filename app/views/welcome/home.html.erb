@@ -1,44 +1,48 @@
 <html>
-    <head>
-        <style>
-            body{
-                background-color: #c1c1c1;
-            }
-            .header {
-                text-align: center;
-                font-size: 300;
-                color: #f2f2f2;
-            }
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
 
-            .topnav {
-                overflow: hidden;
-                background-color: #333;
-            }
+        .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto;
+        }
 
-            .topnav a{
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        .navbar a {
+        float: left;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        }
 
-            .topnav a:hover{
-                background-color: #515151;
-            }
-        </style>
-    </head>
+        .navbar a:hover {
+        background-color: #000;
+        }
+
+        .active {
+        background-color: green;  
+        }
+
+        @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+        }
+        }
+    </style>
     <body>
-        <div class="topnav">
-            <div class="header">
-                <h1>Alpha-Blog</h1>
-            </div>
-            <hr>
-            <%= link_to "About", about_path%>
-            <%= link_to "Credits", credits_path%>
+
+        <h2>Alpha-Blog</h2>
+
+        <div class="navbar">
+        <a class="active" href="credits">Credits</a> 
+        <a href="#"> Search</a> 
+        <a href="#"> Contact</a> 
+        <a href="#"> Login</a>
         </div>
-        <h1>Article 1</h1>
-        <p>This page is just 4 fun guyz. Don't be mad at me for that :< <br> Some random text here xD</p>
+
+        <p>Elo ziomy tu alpha blog</p>
+
     </body>
-</html>
+</html> 
