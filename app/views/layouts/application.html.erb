@@ -13,17 +13,17 @@
     #body{
       background-repeat: no-repeat;
       background-size: 100%;
-      background-image: url('https://www.sacredheartschoolweymouth.org/wp-content/uploads/2014/10/geo-bg.jpg')
+      background-image: asset-url('bg.jpg');
       }
 
   </style>
 
-  <body id="body">
+  <body id="bg">
     <%= render 'layouts/messages' %>
     <%= render 'layouts/navigation' %>
     </br>
-
-    <%= yield %>
-    
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
