@@ -6,7 +6,9 @@
 }
 
 .jumbotron {
-    background-image: asset-url('background.png');
+    background-image: asset-url('money.jpg');
+    background-size: cover;
+    height: 550px;
 }
 
 #bg {
@@ -14,3 +16,9 @@
     background-attachment: fixed;
     background-image: asset-url('bg.jpg');
 }
+
+.btn-xlg {
+    font-size: 1.7em;
+    background-color: black;
+}
+
