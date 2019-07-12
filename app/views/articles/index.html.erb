@@ -1,16 +1,20 @@
-<body class="center">
-    <h1> Articles  </h1> 
-        <p>
-            <a href="/articles/new"> <button class="button_new">New article</button> </a>
-        </p>
-        <hr class="hr_specific">
-        <% @articles.each do |a| %>
+<h1 align="center">Listing all articles</h1>
 
-            <h2><%= a.id %>. <%= link_to "#{a.title}", article_path(a), class: "title"%></h2>   
-            <p> <%= a.description %> </p>
-            <%= link_to "Edit", edit_article_path(a), style: 'color:white', class: 'button_edit' %> <%= link_to "Delete", article_path(a), method: :delete, data: {confirm: "Are you sure?"}, style: 'color:white', class: 'button_delete' %>
-            <hr class="hr_normal">
-
-        <% end %>
-
-</body>
+<% @articles.each do |a| %>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="well well-lg">
+                <div class="article-title">
+                    <%= link_to a.title, article_path(a), style: "color: #298bc4", class:"no-hover" %>
+                </div>
+                <div class="article-body">
+                    <%= truncate(a.description, lenght:10) %>
+                </div>
+                <div class="article-actions">
+                    <%= link_to "Edit this article", edit_article_path(a), class: "btn btn-xs btn-primary", style: "color:white" %> 
+                    <%= link_to "Delete this article", article_path(a), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger", style: "color:white" %>
+                </div>
+            </div>
+        </div>
+    </div>
+<%end%> 
