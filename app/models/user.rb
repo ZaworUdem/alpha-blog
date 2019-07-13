@@ -8,4 +8,6 @@ class User < ActiveRecod::Base
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validate :email, presence: true, uniqueness: { case_sensitive: false }, lenght: {maximum: 105}, format: { width: VALID_EMAIL_REGEX }
 
+    has_secure_password
+
 end
