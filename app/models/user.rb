@@ -2,7 +2,7 @@ class User < ActiveRecod::Base
 
     has_many :articles
 
-    befor_save: {self.email = email.downcase}
+    before_save {self.email = email.downcase}
 
     validate :username, presence: true, uniqueness: { case_sensitive: false } ,lenght: {minimum: 3, maximum: 25}    
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
