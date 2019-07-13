@@ -1,27 +1,4 @@
-<% if @article.errors.any? %>
-
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h2 class="panel-title">
-                        <%= pluralize(@article.errors.count, "error") %>
-                        prevented the article from being created:
-                    </h2>
-                    <div class="panel-body">
-                        <ul>
-                            <% @article.errors.full_messages.each do |msg| %>
-                            <li><%= msg %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                    <%= link_to "Try again", new_article_path, class: "btn btn-primary", style: "color:white" %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<%else%>
+<%= render 'shared/errors', obj: @article %>
 
     <div class='row'>
         <div class='col-xs-12'>
@@ -53,7 +30,7 @@
             </div>
         </div>
     </div>
-<%end%>
+
 
 
 
