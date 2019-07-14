@@ -6,12 +6,28 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a href="/articles">Articles</a></li>
-          <li><a href="/articles/new">New article</a></li>
-          <li><a href="#">Nafing jet</a></li>
+          <li><%= link_to "Users", users_path%></li>
+          <% if logged_in? %>
+          <li class="dropdown right-padding">
+              <a href="#" class="dropbtn">Actions<span class="caret"></span></a>
+              <ul class="dropdown-content nav navbar-nav" style="background-color: #333">
+                <li><a href="/articles/new">New article</a></li>
+                <li></li>
+              </ul>
+            </li>
+          <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %> 
             <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <li class="dropdown right-padding">
+              <a href="#" class="dropbtn" >Your account<span class="caret"></span></a>
+              <ul class="dropdown-content nav navbar-nav" style="background-color: #333">
+                <li><%= link_to "Edit your account", edit_user_path(current_user) %></li>
+                <li><%= link_to "View your profile", user_path(current_user) %></li>
+                <li></li>
+              </ul>
+            </li>
             <% else %>
             <li><%= link_to "Log in", login_path%></li>
             <li><%= link_to "Sign up", signup_path%></li>
@@ -19,4 +35,6 @@
         </ul>
       </div>
     </nav>
-</body>
+</body> 
+<br/>
+<br/>

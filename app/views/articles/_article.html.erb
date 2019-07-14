@@ -11,10 +11,12 @@
                         <small>Created by: <%= a.user.username if a.user%>, <%= time_ago_in_words(a.created_at) %> ago, last updated: <%= time_ago_in_words(a.updated_at) %> ago</small>
                     </div>
                 </div>
-                <div class="article-actions">
-                    <%= link_to "Edit this article", edit_article_path(a), class: "btn btn-xs btn-primary", style: "color:white" %> 
-                    <%= link_to "Delete this article", article_path(a), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger", style: "color:white" %>
-                </div>
+                <% if logged_in? && current_user == a.user %>
+                    <div class="article-actions">
+                        <%= link_to "Edit this article", edit_article_path(a), class: "btn btn-xs btn-primary", style: "color:white" %> 
+                        <%= link_to "Delete this article", article_path(a), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger", style: "color:white" %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
