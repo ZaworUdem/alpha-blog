@@ -2,6 +2,10 @@
     </br>
 <% end %>
 <div class="jumbotron center">
-    <h1>Why don't you...</h1></br>
-    <%= link_to "Sign up now!", "#", class: "btn btn-dark btn-xlg" %>
+    <% if logged_in? %>
+        <h1>Thanks for creating account!</h1>
+    <% else %>
+        <h1>Why don't you...</h1></br>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-dark btn-xlg" %>
+    <% end %>
 </div>
