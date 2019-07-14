@@ -1,62 +1,16 @@
-<!-- # <style>
-#         body {font-family: Arial, Helvetica, sans-serif;}
-
-#         .navbar {
-#         width: 100%;
-#         background-color: #555;
-#         overflow: auto;
-#         }
-
-#         .navbar a {
-#         float: left;
-#         padding: 20px;
-#         color: white;
-#         text-decoration: none;
-#         font-size: 17px;
-#         }
-
-#         .navbar a:hover {
-#             float: left;
-#             padding: 20px;
-#             color: white;
-#             text-decoration: none;
-#             font-size: 17px;
-#         }
-
-#         .active {
-#         background-color: green;  
-#         }
-
-#         @media screen and (max-width: 500px) {
-#         .navbar a {
-#             float: none;
-#             display: block;
-#         }
-#         }
-#     </style>
-#     <body>
-    
-#         <div class="navbar">
-#             <a><%= link_to image_tag("brand.png", size: "50x50"), '/' %></a>
-#             <a href="/articles">Articles</a> 
-#             <a href="/articles/new"> New Article</a> 
-#             <a href="/credits"> Credits</a> 
-#             <a href="#"> Login</a>
-            
-#         </div>
-        
-#     </body> -->
-
 <body style="height:1500px">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-            <%= link_to image_tag("brand.png", size: "50x50", alt: "Coooooo????" ), '/' %>
+            <%= link_to image_tag("brand.png", size: "50x50"), '/' %>
         </div>
         <ul class="nav navbar-nav">
           <li><a href="/articles">Articles</a></li>
           <li><a href="/articles/new">New article</a></li>
           <li><a href="#">Nafing jet</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
         </ul>
       </div>
     </nav>
